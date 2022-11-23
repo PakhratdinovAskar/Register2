@@ -1,0 +1,22 @@
+{% extends 'Register/emptyMain.html' %}
+
+{% block title%}Person{% endblock %}
+
+{% block content %}
+<form action="delete" method="post">
+        {% csrf_token %}
+
+        <label>{{ numberPhone.person.lastName }}</label><br><br>
+        <label> {{ numberPhone.person.firstName }}</label><br><br>
+        <label>{{numberPhone.number}}</label><br><br>
+        <input type="hidden" id="idHidden" name="idHidden" value={{numberPhone.person.id}}>
+
+    <input type="submit" value="Удалить">
+</form>
+
+<br>
+<input type="button" value="Изменить" onclick="update()">
+{% load static %}
+<script src="{% static 'register/JS/firstJS.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'Register/emptyMain.html' %}
+
+{% block title%}Главная страница{% endblock %}
+
+{% block content %}
+    {% for numberPhone in numberPhones %}
+    <a href={{numberPhone.person_id}}>{{ numberPhone.person.lastName }}
+    {{ numberPhone.person.firstName }} <br> {{numberPhone.number}}</a><br><br>
+    {% endfor %}<br>
+    <a href="insert">Добавить</a>
+{% endblock %}

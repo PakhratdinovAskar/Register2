@@ -1,0 +1,18 @@
+{% extends 'Register/emptyMain.html' %}
+
+{% block title%}Добавить{% endblock %}
+
+{% block content %}
+
+    <form action="redirects" method="post">
+        {% csrf_token %}
+        <label>Фамилия</label><br>
+        <input type="text" name="lastName" placeholder="Введите фамилию"><br><br>
+        <label>Имя</label><br>
+        <input type="text" name="firstName" placeholder="Введите имя"><br><br>
+        <label>Номер телефона</label><br>
+        <input type="number" name="number" placeholder="Введите номер телефона"><br><br>
+        <input type="submit" value="Сохранить">
+    </form>
+
+{% endblock %}
